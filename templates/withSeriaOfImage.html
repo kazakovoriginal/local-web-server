@@ -1,0 +1,59 @@
+<html>
+<head>
+    <script type='text/javascript'>
+        var imageID=0;
+        function changeimage(every_seconds){
+            //change the image
+            if(!imageID){
+                document.getElementById("myimage").src="http://192.168.1.69:8080/jcg/mini.jpg";
+                imageID++;
+            }
+            else{if(imageID==1){
+                document.getElementById("myimage").src="http://192.168.1.69:8080/jcg/mini2.jpg";
+                imageID++;
+            }else{if(imageID==2){
+                document.getElementById("myimage").src="http://192.168.1.69:8080/jcg/mini3.jpg";
+                imageID=0;
+            }}}
+            //call same function again for x of seconds
+            setTimeout("changeimage("+every_seconds+")",((every_seconds)*1000));
+        }
+    </script>
+</head>
+
+<body style='background:black;' onload='changeimage(2)'>
+<div style='position:absolute;width:100%;height:100%;left:0px;top:0px;' align='center'><img width='100%' height="100%" id='myimage' src='http://192.168.1.69:8080/jcg/mini.jpg'/></div>
+</body>
+
+</html>
+<!--
+<body>
+<script type="text/javascript">
+
+    var backgrounds = ["http://192.168.1.69:8080/jcg/mini.jpg",
+            "http://192.168.1.69:8080/jcg/mini2.jpg",
+            "http://192.168.1.69:8080/jcg/mini3.jpg"
+    ];
+    var rndBg = Math.floor(Math.random() * 3);
+    document.body.style.backgroundImage = 'url(' + backgrounds[rndBg] + ')';
+</script>
+</body>
+
+<!--<script>
+    var i=1;
+    arrGif=["http://192.168.1.69:8080/jcg/mini.jpg",
+        "http://192.168.1.69:8080/jcg/mini2.jpg",
+        "http://192.168.1.69:8080/jcg/mini3.jpg"
+    ];
+    window.onload=function(){
+        setInterval(fn,3000);
+    }
+    function fn(){
+        document.getElementById("im").src=arrGif[i];
+        i++;
+        if(i>2)i=0;
+    }
+</script>
+<img id = "im" src="http://192.168.1.69:8080/jcg/mini.jpg"/>-->
+<!--<p><img src="http://www.personal.psu.edu/jul229/mini.jpg" alt="Письма мастера дзен" width="100%" height="100%"></p>-->
+<!--</html>-->
